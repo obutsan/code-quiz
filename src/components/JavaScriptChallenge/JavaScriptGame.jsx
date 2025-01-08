@@ -79,16 +79,15 @@ export default function JavaScriptGame() {
 
 
 	return (
-		<>
-			<section className='page-section' id='game'>
-				<div className="container challengeHeader">
-					<div>
-						<Lives lives={lives} />
-					</div>
-					<div className='points'>Points: {points}</div>
-				</div>
-				<Challenge count={count} handleAnswerButton={handleAnswerButton} isFormDisabled={isFormDisabled} />
-			</section>
-		</>
+		<section className='page-section' id='game'>
+    <div className="container d-flex justify-content-end align-items-end gap-3 p-2 challengeHeader gradient-bg-blue rounded-pill">
+        <div>
+            <Lives lives={lives} />
+        </div>
+        <div className='points text-white'>Points: {points}</div>
+    </div>
+    <Challenge count={count} handleAnswerButton={handleAnswerButton} isFormDisabled={isFormDisabled} />
+</section>
+
 	);
 }

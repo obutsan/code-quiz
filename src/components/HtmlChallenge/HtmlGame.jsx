@@ -86,7 +86,6 @@ const HtmlGame = () => {
                 setResult((prev) => ({...prev, lives: prev.lives - 1}));
                 setAlertMessage("Game Over!");
                 setResult({lives: 3, score: 0})
-                // setResult(prevResult => ({ ...prevResult, score: 0 }));
                 setGameOver(true)
                 setAllQuestionAnswered(true)
                 setShowRestart(true)               
@@ -105,10 +104,10 @@ const HtmlGame = () => {
         <h2 className="welcome-text bangers-text h1 text-uppercase">Welcome to HTML Forge 💥</h2>
             <Container className="col-xxl-10 m-1 d-flex justify-content-center align-items-center">
                 <div className='d-flex justify-content-center flex-lg-row flex-md-column flex-sm-column'>
-                    <div className="m-2">
-                        <div className="d-block mx-lg-auto img-fluid px-2">
+                    <div className="m-2"><div className="d-block mx-lg-auto img-fluid px-2">
                             <img className="quest-img object-fit-contain d-block justify-content-center " src="/assets/HtmlGame/htmlstart.jpeg" alt="coding man" style={{maxWidth: '30em', height: '100%'}}></img>
                         </div>
+                        
                         <div className="d-flex justify-content-center align-items-center  mt-5">
                             <div className='answer-character mt-5'> 
                                 <HtmlAnswerCharacter 

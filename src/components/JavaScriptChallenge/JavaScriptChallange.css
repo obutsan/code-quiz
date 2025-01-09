@@ -2,10 +2,7 @@
   min-height: calc(100vh - 140px - 75px);
   display: flex;
   flex-direction: row;
-  background: url('/images/coding1.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-color: #0D213C;
   justify-content: center;
 }
 
@@ -13,13 +10,9 @@
   margin: 20px;
   height: fit-content;
   padding: 15px;
-  border: 10px solid orange;
+  border: 10px solid #0D213C;
   border-radius: 8px;
-  background-color: rgb(36, 36, 36, 0.7);
-}
-
-.answerBtn {
-  background-color: orange !important;
+  background-color: rgb(35, 105, 173, 0.5);
 }
 
 @media (min-width: 600px) {
@@ -29,5 +22,75 @@
     padding: 50px;
   }
 }
+
+#challengeLevel1 {
+  position: relative;
+  padding: 20px;
+  border: 3px solid transparent; /* Invisible border for positioning */
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 100, 0, 0.6), 0 0 30px rgba(255, 165, 0, 0.5);
+  animation: flicker 2s infinite;
+}
+
+#challengeLevel1:before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  background: linear-gradient(45deg, rgba(255, 0, 0, 0.8), rgba(255, 165, 0, 0.8));
+  animation: flame-border 2s infinite;
+  z-index: -1; /* Ensure it stays behind content */
+}
+
+@keyframes flicker {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(255, 100, 0, 0.6), 0 0 30px rgba(255, 165, 0, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 150, 0, 0.7), 0 0 35px rgba(255, 200, 0, 0.6);
+  }
+}
+
+@keyframes flame-border {
+  0%, 100% {
+    transform: scale(1);
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    transform: scale(1.1);
+    filter: hue-rotate(30deg);
+  }
+}
+
+.question {
+  font-weight: 700;
+  border-bottom: 4px solid rgba(255, 100, 0, 0.5);
+}
+
+
+.answerBtn {
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.answerBtn:hover:not(:disabled) {
+  transform: scale(1.1); /* Slightly enlarge the button on hover */
+  background-color: #ff4500; /* Fiery orange for hover */
+  color: #fff; /* White text on hover */
+  box-shadow: 0 0 15px rgba(255, 69, 0, 0.7), 0 0 30px rgba(255, 140, 0, 0.6);
+}
+
+.answerBtn:disabled {
+  transform: none; /* No scaling for disabled button */
+  background-color: #e0a800; /* Muted warning color for disabled state */
+  color: #6c757d; /* Disabled text color */
+  box-shadow: none; /* No shadow when disabled */
+  cursor: not-allowed; /* Disabled state cursor */
+}
+
+
 
 

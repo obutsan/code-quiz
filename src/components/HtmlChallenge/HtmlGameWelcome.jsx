@@ -1,16 +1,9 @@
-import { useNavigate } from 'react-router-dom';
 import {  Container, Row, Button  } from 'react-bootstrap';
 import LevelWelcomeContent from "../LevelWelcomeContent/LevelWelcomeContent";
 import questList from '../../databases/questList.json';
 import './HtmlGame.css';
 
 const HtmlGameWelcome = () => {
-	const navigate = useNavigate();
-
-	const navigateToLevel2 = () => {
-		navigate('/level2');
-	};
-
 	const level2Game = questList.find((game) => game.id === 2);
 
 	return (
@@ -26,14 +19,6 @@ const HtmlGameWelcome = () => {
 						instruction={level2Game.instruction}
 					/>
 				)}
-			</Row>
-			<Row style={{ width: '20em' }}>
-				<Button
-					className="btn gradient-bg-orange rounded-pill btn-lg bold-text text-white mt-5"
-					onClick={navigateToLevel2}
-				>
-					💥 <span className="bangers-text">Start</span> 💥
-				</Button>
 			</Row>
 		</Container>
 	);

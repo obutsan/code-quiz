@@ -1,33 +1,16 @@
- /*@keyframes burn {
-   0% {
-     border-bottom: 3px solid orangered;
-   }
-
-   50% {
-     border-bottom: 8px solid orangered;
-   }
-
-   100% {
-     border-bottom: 3px solid orangered;
-   }
- } */
-
  @keyframes burn {
   0% {
-    border-bottom: 3px solid #2369AD; /* Початковий колір */
+    border-bottom: 3px solid rgb(35, 105, 173);
   }
 
   50% {
-    border-bottom: 8px solid #052044; /* Темніший відтінок на середині */
+    border-bottom: 8px solid #052044;
   }
 
   100% {
-    border-bottom: 3px solid #052044; /* Завершення анімації */
+    border-bottom: 3px solid #052044;
   }
 }
-
-
-
 
  .points {
   font-size: 30px;

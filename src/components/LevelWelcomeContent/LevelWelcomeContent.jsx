@@ -1,7 +1,12 @@
 import React from 'react';
-import { Container, Row, Col, Image } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
+import { Container, Row, Col, Image, Button } from 'react-bootstrap';
 
 const LevelWelcomeContent = (props) => {
+	const navigate = useNavigate();
+	const navigateToLevel = () => {
+		navigate(`/level${props.id}`);
+};
 	return (
 		<>
 			<Container>
@@ -13,6 +18,10 @@ const LevelWelcomeContent = (props) => {
 						<h2 className="fw-bold mb-3">{props.name}</h2>
 						<p className="mt-5">{props.description}</p>
 						<p>{props.instruction}</p>
+						<Button className="btn gradient-bg-orange rounded-pill btn-lg bold-text text-white mt-5" 
+						  onClick={navigateToLevel}>
+              ⚔️ Start ⚔️
+            </Button>
 					</Col>
 				</Row>
 			</Container>

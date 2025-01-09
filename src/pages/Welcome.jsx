@@ -85,7 +85,7 @@ const Welcome = () => {
 								</p>
 						    </div>
                 <div className="d-flex flex-column">
-                    <Button className="my-4 gradient-bg-orange rounded-pill btn-lg" href="/level1welcome" onClick={navigateToLevel1Welcome}>
+                    <Button className="my-4 gradient-bg-orange rounded-pill btn-lg" onClick={navigateToLevel1Welcome}>
                         Start the Game
                     </Button>
                 </div>

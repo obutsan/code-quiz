@@ -1,32 +1,8 @@
-.challenge1 {
-  min-height: calc(100vh - 140px - 75px);
-  display: flex;
-  flex-direction: row;
-  background-color: #0D213C;
-  justify-content: center;
-}
-
-#challengeLevel1 {
-  margin: 20px;
-  height: fit-content;
-  padding: 15px;
-  border: 10px solid #0D213C;
-  border-radius: 8px;
-  background-color: rgb(35, 105, 173, 0.5);
-}
-
-@media (min-width: 600px) {
-  #challengeLevel1 {
-    width: 50%;
-    margin: 50px;
-    padding: 50px;
-  }
-}
-
 #challengeLevel1 {
   position: relative;
   padding: 20px;
-  border: 3px solid transparent; /* Invisible border for positioning */
+  margin-top: 20px;
+  border: 3px solid transparent; 
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(255, 100, 0, 0.6), 0 0 30px rgba(255, 165, 0, 0.5);
   animation: flicker 2s infinite;
@@ -43,7 +19,7 @@
   border-radius: 10px;
   background: linear-gradient(45deg, rgba(255, 0, 0, 0.8), rgba(255, 165, 0, 0.8));
   animation: flame-border 2s infinite;
-  z-index: -1; /* Ensure it stays behind content */
+  z-index: -1;
 }
 
 @keyframes flicker {
@@ -66,31 +42,35 @@
   }
 }
 
-.question {
-  font-weight: 700;
-  border-bottom: 4px solid rgba(255, 100, 0, 0.5);
-}
 
+.hero1,
+.answer {
+  max-width: 100%;
+  height: auto;
+}
 
 .answerBtn {
   transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.answerBtn:hover:not(:disabled) {
-  transform: scale(1.1); /* Slightly enlarge the button on hover */
-  background-color: #ff4500; /* Fiery orange for hover */
-  color: #fff; /* White text on hover */
-  box-shadow: 0 0 15px rgba(255, 69, 0, 0.7), 0 0 30px rgba(255, 140, 0, 0.6);
+.btn-check:checked + .btn-outline-primary {
+  background-color: #007bff; /* Change this color to your desired active state */
+  color: white; /* Text color for active state */
 }
 
-.answerBtn:disabled {
-  transform: none; /* No scaling for disabled button */
-  background-color: #e0a800; /* Muted warning color for disabled state */
-  color: #6c757d; /* Disabled text color */
-  box-shadow: none; /* No shadow when disabled */
-  cursor: not-allowed; /* Disabled state cursor */
+.btn-outline-primary:hover {
+  background-color: rgba(0, 123, 255, 0.1); /* Light background color on hover */
 }
 
+/* Hover effect for checked radio button */
+.btn-check:checked + .btn-outline-primary:hover {
+  background-color: #0056b3; /* Darker shade for hover on active state */
+  color: white; /* Maintain text color on active hover */
+}
 
+.btn-outline-primary {
+  width: 100%;
+  margin-top: 10px;
+}
 
 

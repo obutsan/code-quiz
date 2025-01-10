@@ -20,8 +20,7 @@
     left: 130px;
 }
 .answer-character {
-    
-    animation: pulse 1s linear infinite;
+    animation: pulse 3s linear infinite;
 }
 
 @-webkit-keyframes "pulse" {
@@ -82,3 +81,10 @@
 .button-text {
     color: rgb(113, 25, 140)
 }
+
+@media (min-width: 768px) {
+	.responsive-img {
+	  max-height: 520px;
+	}
+  }
+  

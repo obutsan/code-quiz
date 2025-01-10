@@ -16,7 +16,7 @@ const HtmlAnswerCharacter = ({ alertMessage }) => {
 	return (
 		<div>
 
-			{character && <img className="d-block border-2 rounded img-fluid" style={{ maxWidth: "10em" }} src={character.image} alt={character.id} />}
+			{character && <img className="d-block border-2 rounded img-fluid" style={{ maxWidth: "8em" }} src={character.image} alt={character.id} />}
 
 		</div>
 	);

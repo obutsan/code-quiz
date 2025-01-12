@@ -1,8 +1,8 @@
-import React from 'react';
-import Slider from 'react-slick';
-import { Button } from 'react-bootstrap';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import React from "react";
+import Slider from "react-slick";
+import { Button } from "react-bootstrap";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const FilmSlider = ({ films, handleViewVideo }) => {
   const settings = {
@@ -18,31 +18,31 @@ const FilmSlider = ({ films, handleViewVideo }) => {
           slidesToShow: 3,
           slidesToScroll: 1,
           infinite: true,
-          dots: false
-        }
+          dots: false,
+        },
       },
       {
         breakpoint: 768,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-          dots: false
-        }
+          dots: false,
+        },
       },
       {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          dots: false
-        }
-      }
-    ]
+          dots: false,
+        },
+      },
+    ],
   };
 
   return (
     <Slider {...settings}>
-      {films.map(film => (
+      {films.map((film) => (
         <div key={film.identifier} className="film-card-container">
           <div className="film-card m-1 p-4 rounded bg-secondary bg-opacity-25 h-full">
             <div className="flex flex-col h-full">
@@ -56,7 +56,10 @@ const FilmSlider = ({ films, handleViewVideo }) => {
                 <p className="fs-5">{film.title}</p>
               </div>
               <div className="flex justify-center mt-auto">
-                <Button className="gradient-bg-blue rounded-pill px-2" onClick={() => handleViewVideo(film)}>
+                <Button
+                  className="gradient-bg-blue rounded-pill px-2"
+                  onClick={() => handleViewVideo(film)}
+                >
                   View Video
                 </Button>
               </div>

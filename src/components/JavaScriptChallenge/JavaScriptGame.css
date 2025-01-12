@@ -1,4 +1,4 @@
- @keyframes burn {
+@keyframes burn {
   0% {
     border-bottom: 3px solid rgb(35, 105, 173);
   }
@@ -12,15 +12,15 @@
   }
 }
 
- .points {
+.points {
   font-size: 30px;
   font-weight: bold;
   color: #262626;
   margin-right: 20px;
- }
+}
 
- @media (min-width: 600px) {
-   .challengeHeader {
-      justify-content: end;
-   }
- }
+@media (min-width: 600px) {
+  .challengeHeader {
+    justify-content: end;
+  }
+}

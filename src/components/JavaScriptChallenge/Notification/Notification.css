@@ -3,7 +3,7 @@
 }
 
 .buttons {
-  display: flex; 
+  display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
@@ -18,11 +18,9 @@
   text-decoration: none;
 }
 
-
 .notification {
-  color: '#fff';
-  border-radius: '8px';
-  padding: '16px';
-  box-shadow: '0 0 15px rgba(0, 0, 0, 0.3)';
+  color: "#fff";
+  border-radius: "8px";
+  padding: "16px";
+  box-shadow: "0 0 15px rgba(0, 0, 0, 0.3)";
 }
-

@@ -5,9 +5,9 @@ export const UserContext = createContext();
 export const useUser = () => useContext(UserContext);
 
 export const UserProvider = ({ children }) => {
-  const [username, setUsername] = useState('');
+  const [username, setUsername] = useState("");
   const [finalPoints, setFinalPoints] = useState(0);
-  
+
   const savePlayer = (name) => {
     setUsername(name);
   };
@@ -17,7 +17,9 @@ export const UserProvider = ({ children }) => {
   };
 
   return (
-    <UserContext.Provider value={{ finalPoints, username, savePlayer, saveFinalPoints }}>
+    <UserContext.Provider
+      value={{ finalPoints, username, savePlayer, saveFinalPoints }}
+    >
       {children}
     </UserContext.Provider>
   );

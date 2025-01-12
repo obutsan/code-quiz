@@ -1,10 +1,9 @@
-import { Container, Row, Button } from 'react-bootstrap';
+import { Container, Row, Button } from "react-bootstrap";
 import LevelWelcomeContent from "../LevelWelcomeContent/LevelWelcomeContent";
-import questList from '../../databases/questList.json';
-import '../../components/HtmlChallenge/HtmlGame.css';
+import questList from "../../databases/questList.json";
+import "../../components/HtmlChallenge/HtmlGame.css";
 
 const JavaScriptGameWelcome = () => {
-
   const level1Game = questList.find((game) => game.id === 1);
 
   return (
@@ -18,8 +17,8 @@ const JavaScriptGameWelcome = () => {
             image={level1Game.image}
             description={level1Game.description}
             instruction={level1Game.instruction}
-        />
-         )}
+          />
+        )}
       </Row>
     </Container>
   );

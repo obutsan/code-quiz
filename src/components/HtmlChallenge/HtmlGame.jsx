@@ -67,9 +67,6 @@ const HtmlGame = () => {
       setAllQuestionAnswered(true);
       handleShow();
     }
-    {
-      /*savePointsToStorage(result.score);*/
-    }
   };
 
   const onAnswerSelected = (answer, index) => {

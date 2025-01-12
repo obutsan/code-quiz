@@ -96,7 +96,7 @@ export const successfulNotification = (points) => {
         boxShadow: "0 0 20px rgba(255, 223, 0, 0.8)", // Жовтий відблиск
       },
       duration: Infinity,
-    }
+    },
   );
 };
 
@@ -145,7 +145,7 @@ export const failNotification = () => {
         boxShadow: "0 0 20px rgba(255, 223, 0, 0.8)", // Жовтий відблиск
       },
       duration: Infinity,
-    }
+    },
   );
 };
 
@@ -188,7 +188,7 @@ export const correctAnswerNotification = () => {
         boxShadow: "0 0 20px rgba(0, 255, 0, 0.5)", // Green glow
       },
       duration: 1500,
-    }
+    },
   );
 };
 
@@ -230,7 +230,7 @@ export const wrongtAnswerNotification = () => {
         boxShadow: "0 0 20px rgba(255, 0, 0, 0.5)",
       },
       duration: 1500,
-    }
+    },
   );
 };
 
@@ -273,7 +273,7 @@ export const rememberNotification = () => {
         boxShadow: "0 0 20px rgba(255, 165, 0, 0.7)",
       },
       duration: 1500,
-    }
+    },
   );
 };
 

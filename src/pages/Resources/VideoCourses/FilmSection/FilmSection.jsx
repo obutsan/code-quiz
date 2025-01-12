@@ -1,44 +1,55 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import { Container, Row, Col, Form } from 'react-bootstrap';
-import FilmModal from './FilmModal';
-import FilmSlider from './FilmSlider';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { Container, Row, Col, Form } from "react-bootstrap";
+import FilmModal from "./FilmModal";
+import FilmSlider from "./FilmSlider";
 
 const FilmSection = () => {
   const [selectedFilm, setSelectedFilm] = useState(null);
   const [programmingVideos, setProgrammingVideos] = useState([]);
-  const [filter, setFilter] = useState('web');
+  const [filter, setFilter] = useState("web");
 
-	const formatTitle = (title) => {
-		const phrasesToRemove = ['DOWNLOAD.COM', 'TUTSGALAXY', 'UDEMY', '\\[', '\\]', '\\. NET', 'FREE COURSE SITE\\.COM', 'DESIRE COURSE', 'PAID COURSES FOR FREE\\.COM', '\\.COM'];
-	
-		let formattedTitle = title.toUpperCase();
-	
-		phrasesToRemove.forEach(phrase => {
-			formattedTitle = formattedTitle.replace(new RegExp(phrase, 'g'), '');
-		});
-	
-		return formattedTitle.trim();
-	};
-	
+  const formatTitle = (title) => {
+    const phrasesToRemove = [
+      "DOWNLOAD.COM",
+      "TUTSGALAXY",
+      "UDEMY",
+      "\\[",
+      "\\]",
+      "\\. NET",
+      "FREE COURSE SITE\\.COM",
+      "DESIRE COURSE",
+      "PAID COURSES FOR FREE\\.COM",
+      "\\.COM",
+    ];
+
+    let formattedTitle = title.toUpperCase();
+
+    phrasesToRemove.forEach((phrase) => {
+      formattedTitle = formattedTitle.replace(new RegExp(phrase, "g"), "");
+    });
+
+    return formattedTitle.trim();
+  };
 
   useEffect(() => {
     const fetchVideosData = async () => {
       try {
-        let url = 'https://archive.org/advancedsearch.php?q=collection:(udemy)+AND+mediatype:(movies)';
-        if (filter !== 'All') {
+        let url =
+          "https://archive.org/advancedsearch.php?q=collection:(udemy)+AND+mediatype:(movies)";
+        if (filter !== "All") {
           url += `+AND+title:(${filter})`;
         }
-        url += '&fl[]=title,description,identifier&output=json&rows=10';
+        url += "&fl[]=title,description,identifier&output=json&rows=10";
 
         const response = await axios.get(url);
-        const videos = response.data.response.docs.map(video => ({
+        const videos = response.data.response.docs.map((video) => ({
           ...video,
-          title: formatTitle(video.title)
+          title: formatTitle(video.title),
         }));
         setProgrammingVideos(videos);
       } catch (error) {
-        console.error('Error fetching videos:', error);
+        console.error("Error fetching videos:", error);
       }
     };
 
@@ -59,7 +70,7 @@ const FilmSection = () => {
 
   return (
     <Container className="mt-4">
-			<hr></hr>
+      <hr></hr>
       <h3 className="my-3">Programming Videos</h3>
       <Row className="mb-4">
         <Col md={6}>
@@ -68,7 +79,7 @@ const FilmSection = () => {
             value={filter}
             onChange={handleFilterChange}
             className="w-50 mb-3"
-          >            
+          >
             <option value="All">All</option>
             <option value="Android">Android</option>
             <option value="Angular">Angular</option>
@@ -88,7 +99,12 @@ const FilmSection = () => {
         </Col>
       </Row>
       <FilmSlider films={programmingVideos} handleViewVideo={handleViewVideo} />
-      {selectedFilm && <FilmModal selectedFilm={selectedFilm} onCloseModal={handleCloseModal} />}
+      {selectedFilm && (
+        <FilmModal
+          selectedFilm={selectedFilm}
+          onCloseModal={handleCloseModal}
+        />
+      )}
     </Container>
   );
 };

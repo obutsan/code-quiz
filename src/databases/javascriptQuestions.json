@@ -9,19 +9,34 @@
   {
     "id": 2,
     "question": "How does the 'map' method differ from 'forEach' in JavaScript?",
-    "options": ["They are the same", "map returns a new array, forEach does not", "forEach returns a new array, map does not", "map and forEach cannot be used on arrays"],
+    "options": [
+      "They are the same",
+      "map returns a new array, forEach does not",
+      "forEach returns a new array, map does not",
+      "map and forEach cannot be used on arrays"
+    ],
     "correctAnswer": "map returns a new array, forEach does not"
   },
   {
     "id": 3,
     "question": "How do you declare a class in JavaScript?",
-    "options": ["class MyClass {}", "function MyClass() {}", "var MyClass = {};", "let MyClass = new Class();"],
+    "options": [
+      "class MyClass {}",
+      "function MyClass() {}",
+      "var MyClass = {};",
+      "let MyClass = new Class();"
+    ],
     "correctAnswer": "class MyClass {}"
   },
   {
     "id": 4,
     "question": "What is the 'super' keyword used for in a class?",
-    "options": ["Refers to the parent class", "Refers to the child class", "Refers to the current instance of the class", "Stops the execution of the class"],
+    "options": [
+      "Refers to the parent class",
+      "Refers to the child class",
+      "Refers to the current instance of the class",
+      "Stops the execution of the class"
+    ],
     "correctAnswer": "Refers to the parent class"
   }
 ]

@@ -13,15 +13,19 @@
 - [Credits](#credits)
 
 ## Overview
-The game is an interactive learning platform providing a gamified approach to programming education. 
+
+The game is an interactive learning platform providing a gamified approach to programming education.
 
 User Story: CodeQuest is designed to help players learn to code through fun and engaging games. Our mission is to make coding education accessible and enjoyable for everyone, regardless of their experience level. Whether you're a beginner just starting your coding journey or an experienced developer looking to enhance your skills, CodeQuest offers a wide range of interactive challenges and tutorials to suit your needs. Join us on this exciting quest to master the art of coding!
 
 ## Screenshots
 
 ### Desktop:
-![Screenshot](public/images/screenshot.gif) 
+
+![Screenshot](public/images/screenshot.gif)
+
 ### Mobile:
+
 ![mobileview](public/images/mobile-view-small.png)
 
 ### Links
@@ -29,18 +33,18 @@ User Story: CodeQuest is designed to help players learn to code through fun and 
 - [GitHub Repo](https://github.com/AoifeEdX/code-quest)
 - [Live Link](https://codequest-game.netlify.app/)
 - Presentation Slides:
-	- [PPTX](https://github.com/AoifeEdX/code-quest/blob/main/public/assets/Presentation_CodeQuest.pptx)
-	- [PDF](https://drive.google.com/drive/folders/1FrdpjjQbhZp4Ytr-1pLShFzUMCLSLHi_?usp=drive_link)
+  - [PPTX](https://github.com/AoifeEdX/code-quest/blob/main/public/assets/Presentation_CodeQuest.pptx)
+  - [PDF](https://drive.google.com/drive/folders/1FrdpjjQbhZp4Ytr-1pLShFzUMCLSLHi_?usp=drive_link)
 
 ## Our Process
 
-In this project work, we created three different levels with different design and approach, using react libraries and react bootstrap for design. 
+In this project work, we created three different levels with different design and approach, using react libraries and react bootstrap for design.
 
 It has a GitHub Explorer feature to find intersting repos based on the programmin language of your choice.
 
 It has a Video Courses feature offering a collection of web and mobile development courses and tutorials from Internet Archive.
 
-Meeting the bootcamp requirements we used more libraries (see listed below) and Supabase to store data that are displayed in leaderboard. 
+Meeting the bootcamp requirements we used more libraries (see listed below) and Supabase to store data that are displayed in leaderboard.
 
 ### Built With
 
@@ -67,14 +71,17 @@ Meeting the bootcamp requirements we used more libraries (see listed below) and 
 ## Authors
 
 - Adebayo Dada
+
   - [GitHub](https://github.com/AOD4141)
   - [LinkedIn](https://www.linkedin.com/in/adebayodada/)
 
 - Aoife Dunphy
+
   - [GitHub](https://github.com/AoifeEdX)
   - [LinkedIn](https://www.linkedin.com/in/aoifenidhonnacha/)
 
 - Szilvia Horvath
+
   - [GitHub](https://github.com/hszilvi)
   - [LinkedIn](https://www.linkedin.com/in/horvathszilvi/)
 

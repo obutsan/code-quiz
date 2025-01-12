@@ -1,22 +1,22 @@
-[	
-	{
-		"id": "winCharacter",
-		"image": "/assets/BootstrapGame/winCharacter.png"
-	},
-	{
-		"id": "loseCharacter",
-		"image": "/assets/BootstrapGame/loseCharacter.png"
-	},
-	{
-		"id": "readyCharacter",
-		"image": "/assets/BootstrapGame/readyCharacter.png"
-	},
-	{		
-		"id": "gameOverCharacter",
-		"image": "/assets/BootstrapGame/gameOverCharacter.png"
-	},
-	{		
-		"id": "gameWonCharacter",
-		"image": "/assets/BootstrapGame/gameWonCharacter.png"
-	}
+[
+  {
+    "id": "winCharacter",
+    "image": "/assets/BootstrapGame/winCharacter.png"
+  },
+  {
+    "id": "loseCharacter",
+    "image": "/assets/BootstrapGame/loseCharacter.png"
+  },
+  {
+    "id": "readyCharacter",
+    "image": "/assets/BootstrapGame/readyCharacter.png"
+  },
+  {
+    "id": "gameOverCharacter",
+    "image": "/assets/BootstrapGame/gameOverCharacter.png"
+  },
+  {
+    "id": "gameWonCharacter",
+    "image": "/assets/BootstrapGame/gameWonCharacter.png"
+  }
 ]

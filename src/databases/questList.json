@@ -1,23 +1,23 @@
 [
-    {
-        "id": 1,
-        "name": "Cryptic Code Expedition: Journey into JavaScript",
-        "image": "./images/Designer(28).jpeg",
-        "description": " Your mission is to explore the mysterious realm of JavaScript and unravel coding puzzles.",
-        "instruction": "Answer the Questions: Respond to 4 JavaScript-related questions, each unlocking a new path in your expedition. Earn Points: Each correct answer awards you 10 points. Beware of Mistakes: You have only 3 lives. Incorrect answers may cost you a life. Get ready for an exciting dive into the world of JavaScript!"
-    },
-    {
-        "id": 2,
-        "name": "🗡️ Congratulations, and welcome to HTML Forge",
-        "image": "/assets/HtmlGame/welcometohtmllevel.jpeg",
-        "description": "You are one step closer to saving our Digital World from impending chaos. In this region of CodeLand, HTML tags have been tangled up, causing havoc in the digital landscape.  ",
-        "instruction": "Armed with your coding skills, each of your correct answer comes to life and helps to save our World. Embrace the true magic of HTML Forge! Learn and master Html, enhance your abilities. ⚔️"
-    },
-    {
-        "id": 3,
-        "name": "Bootstrap Battle",
-        "image": "/images/BootstrapBattle.png",
-        "description": "Confront Bootstrap-based challenges to make it through to the end of the game!",
-        "instruction": "Answer the Bootstrap class questions to succeed."
-    }
+  {
+    "id": 1,
+    "name": "Cryptic Code Expedition: Journey into JavaScript",
+    "image": "./images/Designer(28).jpeg",
+    "description": " Your mission is to explore the mysterious realm of JavaScript and unravel coding puzzles.",
+    "instruction": "Answer the Questions: Respond to 4 JavaScript-related questions, each unlocking a new path in your expedition. Earn Points: Each correct answer awards you 10 points. Beware of Mistakes: You have only 3 lives. Incorrect answers may cost you a life. Get ready for an exciting dive into the world of JavaScript!"
+  },
+  {
+    "id": 2,
+    "name": "🗡️ Congratulations, and welcome to HTML Forge",
+    "image": "/assets/HtmlGame/welcometohtmllevel.jpeg",
+    "description": "You are one step closer to saving our Digital World from impending chaos. In this region of CodeLand, HTML tags have been tangled up, causing havoc in the digital landscape.  ",
+    "instruction": "Armed with your coding skills, each of your correct answer comes to life and helps to save our World. Embrace the true magic of HTML Forge! Learn and master Html, enhance your abilities. ⚔️"
+  },
+  {
+    "id": 3,
+    "name": "Bootstrap Battle",
+    "image": "/images/BootstrapBattle.png",
+    "description": "Confront Bootstrap-based challenges to make it through to the end of the game!",
+    "instruction": "Answer the Bootstrap class questions to succeed."
+  }
 ]

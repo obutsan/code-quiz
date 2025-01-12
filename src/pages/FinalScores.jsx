@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Button, Row, Col, Image } from "react-bootstrap";
 import Points from "../components/BootstrapChallenge/Points";
 import Leaderboard from "../components/Leaderboard";

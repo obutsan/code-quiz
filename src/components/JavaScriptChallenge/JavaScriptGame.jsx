@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import Challenge from "./JavaScriptChallenge";
 import questions from "../../databases/javascriptQuestions.json";
 import Lives from "./Lives";

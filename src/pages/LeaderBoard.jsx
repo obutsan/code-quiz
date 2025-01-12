@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container, Button, Row, Col, Image } from 'react-bootstrap';
 import Leaderboard from '../components/Leaderboard';
 import cheerGif from '/images/fireGif.gif';

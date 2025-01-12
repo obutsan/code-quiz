@@ -53,6 +53,9 @@ export default function Challenge({
                   : ""
               }
             >
+              <option value="" disabled>
+                Choose your answer
+              </option>
               {answerOptions.map((option, index) => (
                 <option key={index} value={option}>
                   {option}

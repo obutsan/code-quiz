@@ -10,6 +10,12 @@
   animation: flicker 2s infinite;
 }
 
+@media (min-width: 576px) {
+  .challenge {
+    min-height: 450px;
+  }
+}
+
 #challengeLevel1:before {
   content: "";
   position: absolute;

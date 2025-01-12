@@ -1,5 +1,13 @@
-.custom-height {
-  max-height: 450px;
+
+@media (min-width: 576px) {
+  .img-fluid.question-img {
+    max-width: 550px;
+    object-fit: contain;
+  }
+}
+
+.custom-width {
+  max-width: 600px;
 }
 
 @media (max-width: 576px) {

@@ -9,6 +9,7 @@ import LevelComplete from "./LevelComplete";
 import GameOver from "./GameOver";
 import Livess from "./../JavaScriptChallenge/Lives";
 import { savePointsToStorage } from "../../utils/localStorage";
+import "./Challenge3.css";
 
 export default function Game() {
   const [lives, setLives] = useState(3);
@@ -91,7 +92,7 @@ export default function Game() {
   return (
     <Container className="mt-1">
       <Row className="text-center justify-content-center flex-row">
-        <Col xs="12" className="mb-5">
+        <Col xs="12" className="mb-3">
           <div className="border border-2 border-warning rounded gap-3 p-3 bg-primary bg-opacity-25 bg-gradient d-flex justify-content-end align-items-center">
             <Livess lives={lives} />
             <Points
@@ -106,15 +107,14 @@ export default function Game() {
           <Row>
             <Col
               xs="12"
-              md="6"
+              md="8"
               className="d-flex flex-column align-items-center"
             >
               {imageSrc && (
                 <Image
                   src={imageSrc}
                   alt="Question Image"
-                  fluid
-                  className="img-fluid mb-2"
+                  className="img-fluid question-img"
                 />
               )}
 
@@ -144,7 +144,7 @@ export default function Game() {
 
             <Col
               xs="12"
-              md="6"
+              md="4"
               className="d-flex justify-content-center align-items-center"
             >
               <div className="w-100">

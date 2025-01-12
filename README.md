@@ -1,34 +1,85 @@
-# 🌟 Portfolio - Pobedynska React 🌟
+# CodeQuest
 
-## Description
+## Module 14 Final Project
 
-Welcome to my portfolio! This project showcases my skills, work samples, and contact information. I developed this portfolio to demonstrate my expertise in web development and my ability to create responsive and visually appealing applications. 
+## Table of Contents
 
-### 🛠️ Technologies Used
+- [Overview](#overview)
+- [Screenshots](#screenshots)
+- [Links](#links)
+- [Built With](#built-with)
+- [Authors](#authors)
+- [Credits](#credits)
 
-- **HTML**: For structuring the content
-- **CSS**: For styling the layout and design
-- **GitHub**: For version control and collaboration
-- **Tailwind**: For responsive design and pre-styled components
-- **React**: For building the user interface
-- **React Router**: For navigation between pages
+## Overview
 
-## 🌐 Live Project
+CodeQuest is a web game that allows you to test your knowledge of JavaScript, HTML, and Bootstrap. The game is designed to make learning fun and interactive. As you play, you can earn points for completing challenges, and you can see your total score.
 
-You can view the project live at the following link:  
-👉 [Portfolio - Pobedynska React](https://github.com/23birola/portfolio-pobedynska-react)
+In CodeQuest, you can also check the leaderboard to see how you compare to other players. Whether you're just starting out or looking to improve your coding skills, CodeQuest offers an enjoyable way to learn and compete with others. Join us in this exciting adventure to become a coding master!
 
-### 📸 Project Screenshot
+## Screenshots
 
-![Project Screenshot](path_to_your_screenshot.png)  
-*Replace `path_to_your_screenshot.png` with the actual path or URL to your project screenshot.*
+### Desktop:
 
-## 📋 Project Outline
+![Screenshot](public/images/screenshot.gif)
 
-- **🏠 Home Page**: Introduction and overview of my skills.
-- **📁 Projects Section**: Showcases my work samples and detailed descriptions.
-- **📞 Contact Information**: Ways to get in touch with me.
+### Mobile:
 
-## 📜 License
+![mobileview](public/images/mobile-view-small.png)
 
-This project is licensed under the MIT License. For details, please see the [LICENSE](LICENSE) file.
+### Links
+
+- [GitHub Repo](https://github.com/obutsan/code-quiz)
+- [Live Link](https://codeeequest.netlify.app/)
+
+
+### Built With
+
+![React](https://img.shields.io/badge/React-%2320232a.svg?style=for-the-badge&logo=React&logoColor=%2361DAFB)
+![Node.js](https://img.shields.io/badge/Node.js-6DA55F?style=for-the-badge&logo=Node.js&logoColor=white)
+![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-%238511FA.svg?style=for-the-badge&logo=Bootstrap&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-%23323330.svg?style=for-the-badge&logo=JavaScript&logoColor=%23F7DF1E)
+
+### Libraries
+
+- Bootstrap [npm package](https://www.npmjs.com/package/bootstrap)
+- Fontsource
+- Material UI Icons [npm package](https://www.npmjs.com/package/@mui/icons-material)
+- Popper.js [npm package](https://www.npmjs.com/package/@popperjs/core)
+- React Bootstrap [npm package](https://www.npmjs.com/package/react-bootstrap)
+- React Hot Toast [npm package](https://www.npmjs.com/package/react-hot-toast)
+- React Router Dom [npm package](https://www.npmjs.com/package/react-router-dom)
+- React Toastify [npm package](https://www.npmjs.com/package/react-toastify)
+- Supabase [supabase.com](https://supabase.com/toas)
+- Typewriter Effect [npm package](https://www.npmjs.com/package/typewriter-effect)
+- UUID [npm package](https://www.npmjs.com/package/uuid)
+
+## Authors
+
+- Olha Pobedynska
+  - [GitHub](https://github.com/obutsan)
+  - [LinkedIn](https://www.linkedin.com/in/olga-pobedynska)
+
+- Aoife Dunphy
+
+  - [GitHub](https://github.com/AoifeEdX)
+  - [LinkedIn](https://www.linkedin.com/in/aoifenidhonnacha/)
+
+- Szilvia Horvath
+
+  - [GitHub](https://github.com/hszilvi)
+  - [LinkedIn](https://www.linkedin.com/in/horvathszilvi/)
+
+
+### Credits
+
+<details>
+<summary><b>Resources</b></summary>
+
+- Internet Archive API
+- GitHub Languages API
+- Google Script API
+- Supabase SQL
+
+</details>

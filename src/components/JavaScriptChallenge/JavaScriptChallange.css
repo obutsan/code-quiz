@@ -74,3 +74,9 @@
 }
 
 
+.form-check-input:checked + .btn-outline-primary {
+  background-color:  rgba(255, 200, 0, 0.6);
+  border-color:  rgba(255, 200, 0, 0.6);
+  color: white;
+  font-weight: bold;
+}

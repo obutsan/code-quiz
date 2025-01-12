@@ -7,6 +7,7 @@ import Points from "./Points";
 import Character from './Character';
 import LevelComplete from './LevelComplete';
 import GameOver from './GameOver';
+import Livess from './../JavaScriptChallenge/Lives';
 import { savePointsToStorage } from '../../utils/localStorage';
 
 export default function Game() {
@@ -87,7 +88,79 @@ export default function Game() {
 	const imageSrc = currentQuestion.image || '';
 
 	return (
-		<Container className="mt-5">
+
+ 
+<Container className="mt-1">
+  <Row className="text-center justify-content-center flex-row">
+    
+    <Col xs="12" className="mb-5">
+      <div className="border border-2 border-warning rounded gap-3 p-3 bg-primary bg-opacity-25 bg-gradient d-flex justify-content-end align-items-center">
+        <Livess lives={lives} />
+        <Points
+          points={points}
+          totalQuestions={questions.length}
+          pointsPerQuestion={10}
+        />
+      </div>
+    </Col>
+
+    
+    <Col xs="12" className="mb-2">
+      <Row>
+        
+        <Col xs="12" md="6" className="d-flex flex-column align-items-center">
+          {imageSrc && (
+            <Image
+              src={imageSrc}
+              alt="Question Image"
+              fluid
+              className="img-fluid mb-2"
+            />
+          )}
+          
+          <div className="w-100">
+            {!gameOver && !allQuestionsAnswered && (
+              <Challenge
+                count={count}
+                handleAnswerButton={handleAnswerButton}
+                gameOver={gameOver}
+              />
+            )}
+            {allQuestionsAnswered && (
+              <LevelComplete
+                totalQuestions={questions.length}
+                pointsPerQuestion={10}
+              />
+            )}
+            {gameOver && (
+              <GameOver
+                handleRestartGame={handleRestartGame}
+                points={points}
+                handleBuyLife={handleBuyLife}
+              />
+            )}
+          </div>
+        </Col>
+
+        
+        <Col xs="12" md="6" className="d-flex justify-content-center align-items-center">
+          <div className="w-100">
+            <Character
+              lives={lives}
+              points={points}
+              message={message}
+              gameOver={gameOver}
+              allQuestionsAnswered={allQuestionsAnswered}
+              handleRestartGame={handleRestartGame}
+            />
+          </div>
+        </Col>
+      </Row>
+    </Col>
+  </Row>
+</Container>
+
+	/*<Container className="mt-1">
 			<Row className="justify-content-md-center text-center">
 				<Col md="4" className="order-md-2 d-flex flex-column justify-content-between mb-3">
 					<div className="border border-2 border-warning rounded p-4 mb-3 bg-primary bg-opacity-25 bg-gradient">
@@ -98,7 +171,7 @@ export default function Game() {
 							pointsPerQuestion={10}
 						/>
 					</div>
-					<div className="border border-2 border-warning rounded text-center bg-primary bg-opacity-25 bg-gradient d-none d-sm-block">
+					<div className="border border-2 border-warning rounded text-center bg-primary bg-opacity-25 bg-gradient d-sm-block">
 						<Character
 							lives={lives}
 							points={points}
@@ -129,6 +202,7 @@ export default function Game() {
 					</div>
 				</Col>
 			</Row>
-		</Container>
+		</Container>*/
+		
 	);
 }

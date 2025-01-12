@@ -7,16 +7,16 @@ const Points = ({ points }) => {
 
 	return (
 		<div className="d-flex justify-content-between text-success fw-bold fs-4">
-			<p>Points: {points}</p>
-			<ProgressBar
-				animated
-				now={progress}
-				label={`${points}`}
-				variant="success"
-				className="w-50"
-				style={{ height: '32px' }}
-			/>
-		</div>
+    <p style={{ marginBottom: '0' }}>Points: {points}</p>
+    <ProgressBar
+        animated
+        now={progress}
+        label={`${points}`}
+        variant="success"
+        className="d-none d-md-flex ms-3" // Змінено на d-md-inline
+        style={{ height: '32px', width: '200px' }} // Змінено на width: 'auto' для автоматичної ширини
+    />
+</div>
 	);
 };
 

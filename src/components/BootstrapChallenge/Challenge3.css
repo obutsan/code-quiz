@@ -1,0 +1,11 @@
+.custom-height {
+    max-height: 450px; /* Зменшена висота для мобільних пристроїв */
+}
+
+@media (max-width: 576px) {
+    .custom-height {
+        max-height: 250px; /* Зменшена висота для мобільних пристроїв */
+        margin-top: 20px;
+    }
+}
+

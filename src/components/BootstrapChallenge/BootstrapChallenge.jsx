@@ -30,29 +30,27 @@ export default function Challenge({ count, handleAnswerButton, gameOver, questio
 		<>
 			<div id='challenge'>
 				<h4 className="my-3">Question {count + 1}:</h4>
-				<p className='question'>{question}</p>
-				<p>
-					<span className='question bold-text text-warning'>Options: </span>
-					{answerOptions.map((option, index) => (
-						<span key={index} className="answer-option text-info ">
-							{option}
-							{index !== answerOptions.length - 1 && <span className="option-spacing">, </span>}
-						</span>
-					))}
-				</p>
+				<p className='question h4 fw-bold text-warning'>{question}</p>
+				
 				<Form onSubmit={handleAnswer} className="mx-auto mt-4" style={{ maxWidth: '400px' }}>
-					<InputGroup>
-						<Form.Control
-							type="text"
-							placeholder={validationError ? validationError : "Type your answer here"}
-							value={userAnswer}
-							onChange={(e) => setUserAnswer(e.target.value)}
-							disabled={gameOver || questionAnswered}
-							className={submittedWithoutInput && userAnswer.trim() === '' ? "bg-danger-subtle" : ""}
-						/>
-						<Button type="submit" className="gradient-bg-blue-no-shadow" disabled={gameOver || questionAnswered}>Submit</Button>
-					</InputGroup>
-				</Form>
+          <InputGroup>
+            <Form.Select
+              value={userAnswer}
+              onChange={(e) => setUserAnswer(e.target.value)}
+              disabled={gameOver || questionAnswered}
+              className={submittedWithoutInput && userAnswer.trim() === '' ? "bg-danger-subtle" : ""}
+            >
+              {answerOptions.map((option, index) => (
+                <option key={index} value={option}>
+                  {option}
+                </option>
+                ))}
+            </Form.Select>
+            <Button type="submit" className="gradient-bg-blue-no-shadow" disabled={gameOver || questionAnswered}>
+            Submit
+            </Button>
+          </InputGroup>
+        </Form>
 			</div>
 		</>
 	);

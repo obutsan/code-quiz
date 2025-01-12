@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Modal, Button } from 'react-bootstrap';
+import { Modal, Button, Container, Row, Col, Image } from 'react-bootstrap';
 import { getAllDataFromSupabase } from '../../utils/Supabase';
+import cheerGif from '/images/fireGif.gif';
 import toast from 'react-hot-toast';
 
 const LeaderBoard = ({ onClose }) => {
@@ -22,35 +23,74 @@ const LeaderBoard = ({ onClose }) => {
 	}, []);
 
 	return (
-		<div className="d-flex justify-content-center">
-			<Modal.Dialog scrollable className="border border-info border-3 rounded p-5" >
-				<Modal.Header className='text-center'>
-					<h2 className='modal-title w-100 h3 me-5 text-warning'>Leaderboard</h2>
-					<button type="button" className="btn-close btn-close-white m-1" data-bs-dismiss="modal" aria-label="Close" onClick={() => onClose()}></button>
+		<Container>
+			<Modal.Dialog
+				scrollable
+				className="border border-info border-3 rounded p-4 w-100">
+				<Modal.Header className="d-flex text-center">
+					<h2 className='modal-title w-100 h1 me-5 text-warning'>Leaderboard</h2>
+					{/* Close Button */}
+					<button
+						type="button"
+						className="btn-close btn-close-white"
+						data-bs-dismiss="modal"
+						aria-label="Close"
+						onClick={onClose}>
+					</button>
 				</Modal.Header>
-				<Modal.Body className="m-1 ">
-					<table className="table mt-2 border-0  table-dark bg-secondary">
-						<thead className='p-2'>
-							<tr className="table-dark border-danger">
-								<th className="text-danger p-3" scope="col">Player</th>
-								<th className="text-success p-3" scope="col">Score</th>
-							</tr>
-						</thead>
-						<tbody>
-							{playersData.map(({ name, score, id }) => (
-								<tr key={id} scope="row">
-									<td>{name}</td>
-									<td>{score}</td>
-								</tr>)
-							)}
-						</tbody>
-					</table>
+				<Modal.Body className="p-3">
+					<Row>
+						{/* Image Section */}
+						<Col md="6" className="text-center my-md-5">
+							<Image
+								className="img-fluid rounded align-self-start"
+								src={cheerGif}
+								alt="CodeQuest background"
+								style={{ maxWidth: '300px' }}
+							/>
+						</Col>
+
+						{/* Leaderboard Section */}
+						<Col md="6" className="d-flex flex-column align-items-start my-4">
+
+							{/* Leaderboard Table */}
+							<table className="table table-dark bg-gradient bg-opacity-50 border rounded-3">
+								<thead className="table-warning">
+									<tr>
+										<th className="text-primary px-4 py-2">Player</th>
+										<th className="text-success px-4 py-2">Score</th>
+									</tr>
+								</thead>
+								<tbody>
+									{playersData.map(({ name, score, id }) => (
+										<tr key={id} className="table-light border-bottom">
+											<td className="px-4 py-2">{name}</td>
+											<td className="px-4 py-2">{score}</td>
+										</tr>
+									))}
+								</tbody>
+							</table>
+						</Col>
+					</Row>
 				</Modal.Body>
 				<Modal.Footer>
-					<Button className="m-2 rounded-pill gradient-bg-orange text-white btn-lg px-5" variant="outline-warning" onClick={() => onClose()}>Close</Button>
+					{/* Buttons */}
+					<div className="d-flex flex-wrap gap-3 mt-4">
+						<Button
+							className="rounded-pill gradient-bg-orange text-white px-4 py-2"
+							variant="warning">
+							Start Again
+						</Button>
+						<Button
+							className="rounded-pill gradient-bg-orange text-white px-4 py-2"
+							variant="outline-warning"
+							onClick={onClose}>
+							Close
+						</Button>
+					</div>
 				</Modal.Footer>
 			</Modal.Dialog>
-		</div>
+		</Container>
 	)
 }
 

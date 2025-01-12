@@ -25,7 +25,7 @@ const FinalScores = () => {
 
 	return (
 		<Container>
-			<Row>
+			{!showLeaderboard && <Row>
 				<Col md="6">
 					<Image className="pe-md-5 my-5" src={cheerGif} alt="CodeQuest background" fluid rounded />
 				</Col>
@@ -43,9 +43,9 @@ const FinalScores = () => {
 					>
 						{showLeaderboard ? 'Hide Leaderboard' : 'View Leaderboard'}
 					</Button>
-					{showLeaderboard && <Leaderboard onClose={handleButtonClick} />}
 				</Col>
-			</Row>
+			</Row>}
+			{showLeaderboard && <Leaderboard onClose={handleButtonClick} />}
 		</Container>
 	);
 };

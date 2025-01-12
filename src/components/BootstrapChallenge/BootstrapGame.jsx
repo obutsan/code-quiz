@@ -22,7 +22,6 @@ export default function Game() {
 	useEffect(() => {
 		if (allQuestionsAnswered) {
 			savePointsToStorage(points);
-			//updateLeaderBordStorage();
 		}
 	}, [allQuestionsAnswered]);
 

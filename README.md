@@ -7,7 +7,6 @@
 - [Overview](#overview)
 - [Screenshots](#screenshots)
 - [Links](#links)
-- [Our Process](#our-process)
 - [Built With](#built-with)
 - [Authors](#authors)
 - [Credits](#credits)
@@ -30,7 +29,7 @@ User Story: CodeQuest is designed to help players learn to code through fun and 
 
 ### Links
 
-- [GitHub Repo](https://github.com/AoifeEdX/code-quest)
+- [GitHub Repo](https://github.com/obutsan/code-quiz)
 - [Live Link](https://codequest-game.netlify.app/)
 
 

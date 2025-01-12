@@ -32,19 +32,7 @@ User Story: CodeQuest is designed to help players learn to code through fun and 
 
 - [GitHub Repo](https://github.com/AoifeEdX/code-quest)
 - [Live Link](https://codequest-game.netlify.app/)
-- Presentation Slides:
-  - [PPTX](https://github.com/AoifeEdX/code-quest/blob/main/public/assets/Presentation_CodeQuest.pptx)
-  - [PDF](https://drive.google.com/drive/folders/1FrdpjjQbhZp4Ytr-1pLShFzUMCLSLHi_?usp=drive_link)
 
-## Our Process
-
-In this project work, we created three different levels with different design and approach, using react libraries and react bootstrap for design.
-
-It has a GitHub Explorer feature to find intersting repos based on the programmin language of your choice.
-
-It has a Video Courses feature offering a collection of web and mobile development courses and tutorials from Internet Archive.
-
-Meeting the bootcamp requirements we used more libraries (see listed below) and Supabase to store data that are displayed in leaderboard.
 
 ### Built With
 
@@ -70,10 +58,9 @@ Meeting the bootcamp requirements we used more libraries (see listed below) and 
 
 ## Authors
 
-- Adebayo Dada
-
-  - [GitHub](https://github.com/AOD4141)
-  - [LinkedIn](https://www.linkedin.com/in/adebayodada/)
+- Olha Pobedynska
+  - [GitHub](https://github.com/obutsan)
+  - [LinkedIn](https://www.linkedin.com/in/olga-pobedynska)
 
 - Aoife Dunphy
 
@@ -85,9 +72,6 @@ Meeting the bootcamp requirements we used more libraries (see listed below) and 
   - [GitHub](https://github.com/hszilvi)
   - [LinkedIn](https://www.linkedin.com/in/horvathszilvi/)
 
-- Olha Pobedynska
-  - [GitHub](https://github.com/23birola)
-  - [LinkedIn](https://www.linkedin.com/in/olga-pobedynska-a79492220/)
 
 ### Credits
 

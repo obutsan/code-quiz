@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import htmlQuestionList from "../../databases/htmlQuestionsList.json";
 import { Button, Container } from "react-bootstrap";
-import HtmlLives from "./HtlmLives";
 import HtmlAnswerCharacter from "./HtmlAnswerCharacter";
 import "./HtmlGame.css";
 import { savePointsToStorage } from "../../utils/localStorage";

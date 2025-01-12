@@ -1,5 +1,5 @@
 import "./App.css";
-import "@fontsource/source-code-pro";
+import '@fontsource/open-sans/400.css';
 import "@fontsource/source-code-pro/700.css";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { Toaster } from "react-hot-toast";

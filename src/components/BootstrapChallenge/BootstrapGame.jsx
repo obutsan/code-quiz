@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Image } from "react-bootstrap";
 import questions from "../../databases/bootstrapChallenge";
 import Challenge from "./BootstrapChallenge";
-import Lives from "./Lives";
 import Points from "./Points";
 import Character from "./Character";
 import LevelComplete from "./LevelComplete";

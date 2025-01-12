@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Navbar, Nav, Button, NavDropdown } from "react-bootstrap";
 import { EmojiEvents } from "@mui/icons-material";
 import LeaderBoard from "../Leaderboard/index";
@@ -48,19 +48,7 @@ const Header = () => {
             id="navbar-nav"
             className="justify-content-end text-end my-3"
           >
-            <NavDropdown
-              title="Learning Resources"
-              id="basic-nav-dropdown"
-              className="mx-3"
-            >
-              <NavDropdown.Item href="/ghexplorer">
-                GitHub Explorer
-              </NavDropdown.Item>
-              <NavDropdown.Item href="/videocourses">
-                Video Courses
-              </NavDropdown.Item>
-            </NavDropdown>
-            <Nav className="d-flex align-items-center">
+             <Nav className="d-flex align-items-center">
               <Nav.Link href="/about" className="mx-2">
                 About
               </Nav.Link>

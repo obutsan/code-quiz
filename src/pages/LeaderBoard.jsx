@@ -1,13 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Container, Button, Row, Col, Image } from 'react-bootstrap';
-import Points from '../components/BootstrapChallenge/Points';
 import Leaderboard from '../components/Leaderboard';
 import cheerGif from '/images/fireGif.gif';
 import { getAllDataFromSupabase } from '../../utils/Supabase';
 import toast from 'react-hot-toast';
 
 const FinalScores = () => {
-	const [finalScores, setFinalScores] = useState(null);
 	const [playersData, setPlayersData] = useState([]);
 	const [showLeaderboard, setShowLeaderboard] = useState(false);
 	const handleButtonClick = () => {

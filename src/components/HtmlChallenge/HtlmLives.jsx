@@ -1,5 +1,3 @@
-import React from "react";
-
 const HtmlLives = ({ displayedLives }) => {
   const fires = new Array(displayedLives)
     .fill(null)

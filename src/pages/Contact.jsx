@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Button, Container, Row, Col } from "react-bootstrap";
 import IconButton from "@mui/material/IconButton";
 import { Email, GitHub, LinkedIn, Phone } from "@mui/icons-material";

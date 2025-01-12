@@ -1,4 +1,3 @@
-import React from "react";
 import htmlAnswerChar from "../../databases/htmlAnswerChar.json";
 
 const HtmlAnswerCharacter = ({ alertMessage }) => {

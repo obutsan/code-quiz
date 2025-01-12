@@ -1,8 +1,8 @@
 import { createClient } from '@supabase/supabase-js'
 import toast from 'react-hot-toast';
 
-const supabaseUrl = 'https://ytipdxgirdozpzcdvtip.supabase.co';
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl0aXBkeGdpcmRvenB6Y2R2dGlwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDk2OTY1NDksImV4cCI6MjAyNTI3MjU0OX0.nglExYZ7Tq9JtgaGM4pqvJC6-rNm0gfoTRsB_Zu4Nns';
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+const supabaseKey = import.meta.env.VITE_SUPABASE_KEY;
 
 const supabase = createClient(supabaseUrl, supabaseKey);
 
@@ -16,6 +16,7 @@ export async function insertDataIntoTable() {
       .from('players')
       .insert([dataToInsert]);
     if (error) {
+      console.log(error);
       toast.error('Error inserting data');
     }
 }
@@ -29,7 +30,9 @@ export async function getAllDataFromSupabase() {
 
     if (error) {
       toast.error('Error fetching data');
+      console.log(error);
     } else {
+      console.log(data);
       return (data);
     }
   }

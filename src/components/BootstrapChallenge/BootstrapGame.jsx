@@ -24,7 +24,7 @@ export default function Game() {
 			savePointsToStorage(points);
 			//updateLeaderBordStorage();
 		}
-	}, [allQuestionsAnswered, points]);
+	}, [allQuestionsAnswered]);
 
 	useEffect(() => {
 		const storedUserData = localStorage.getItem('currentUser');
@@ -159,50 +159,5 @@ export default function Game() {
     </Col>
   </Row>
 </Container>
-
-	/*<Container className="mt-1">
-			<Row className="justify-content-md-center text-center">
-				<Col md="4" className="order-md-2 d-flex flex-column justify-content-between mb-3">
-					<div className="border border-2 border-warning rounded p-4 mb-3 bg-primary bg-opacity-25 bg-gradient">
-						<Lives lives={lives} />
-						<Points
-							points={points}
-							totalQuestions={questions.length}
-							pointsPerQuestion={10}
-						/>
-					</div>
-					<div className="border border-2 border-warning rounded text-center bg-primary bg-opacity-25 bg-gradient d-sm-block">
-						<Character
-							lives={lives}
-							points={points}
-							message={message}
-							gameOver={gameOver}
-							allQuestionsAnswered={allQuestionsAnswered}
-							handleRestartGame={handleRestartGame}
-						/>
-					</div>
-				</Col>
-				<Col md="8" className="order-md-1 d-flex flex-column mb-3">
-					<div className="border border-2 border-warning rounded flex-grow-1 bg-primary bg-opacity-25 bg-gradient">
-						{imageSrc && !gameOver && (
-							<Image src={imageSrc} alt="Question Image" fluid />
-						)}
-						{!gameOver && !allQuestionsAnswered && (
-							<div className="p-3">
-								<Challenge
-									count={count}
-									handleAnswerButton={handleAnswerButton}
-									gameOver={gameOver}
-								/>
-							</div>
-						)}
-						{allQuestionsAnswered && <LevelComplete totalQuestions={questions.length} pointsPerQuestion={10} />}
-						{gameOver && <GameOver handleRestartGame={handleRestartGame} points={points} handleBuyLife={handleBuyLife} />}
-
-					</div>
-				</Col>
-			</Row>
-		</Container>*/
-		
-	);
+);
 }

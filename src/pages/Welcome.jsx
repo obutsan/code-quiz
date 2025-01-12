@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Container,
   Row,
@@ -13,6 +13,10 @@ import Typewriter from "typewriter-effect";
 import { useNavigate } from "react-router-dom";
 import { saveCurrentUser } from "../utils/localStorage";
 import fightGif from "/images/fightGif.gif";
+
+useEffect(() => {
+  localStorage.removeItem('currentUser'); 
+  }, []);
 
 const Welcome = () => {
   const [formData, setFormData] = useState({ username: "" });

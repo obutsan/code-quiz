@@ -3,9 +3,11 @@ import { Modal, Button, Container, Row, Col, Image } from "react-bootstrap";
 import { getAllDataFromSupabase } from "../../utils/Supabase";
 import cheerGif from "/images/fireGif.gif";
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 const LeaderBoard = ({ onClose }) => {
   const [playersData, setPlayersData] = useState([]);
+  const navigate = useNavigate();
 
   async function getPlayersData() {
     try {
@@ -21,6 +23,12 @@ const LeaderBoard = ({ onClose }) => {
   useEffect(() => {
     getPlayersData();
   }, []);
+
+  const handleStartAgain = () => {
+    navigate("/");
+    onClose();
+    localStorage.removeItem('currentUser'); 
+  };
 
   return (
     <Container>
@@ -81,6 +89,7 @@ const LeaderBoard = ({ onClose }) => {
             <Button
               className="rounded-pill gradient-bg-orange text-white px-4 py-2"
               variant="warning"
+              onClick={handleStartAgain}
             >
               Start Again
             </Button>

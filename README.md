@@ -13,9 +13,9 @@
 
 ## Overview
 
-The game is an interactive learning platform providing a gamified approach to programming education.
+CodeQuest is a web game that allows you to test your knowledge of JavaScript, HTML, and Bootstrap. The game is designed to make learning fun and interactive. As you play, you can earn points for completing challenges, and you can see your total score.
 
-User Story: CodeQuest is designed to help players learn to code through fun and engaging games. Our mission is to make coding education accessible and enjoyable for everyone, regardless of their experience level. Whether you're a beginner just starting your coding journey or an experienced developer looking to enhance your skills, CodeQuest offers a wide range of interactive challenges and tutorials to suit your needs. Join us on this exciting quest to master the art of coding!
+In CodeQuest, you can also check the leaderboard to see how you compare to other players. Whether you're just starting out or looking to improve your coding skills, CodeQuest offers an enjoyable way to learn and compete with others. Join us in this exciting adventure to become a coding master!
 
 ## Screenshots
 
@@ -30,7 +30,7 @@ User Story: CodeQuest is designed to help players learn to code through fun and 
 ### Links
 
 - [GitHub Repo](https://github.com/obutsan/code-quiz)
-- [Live Link](https://codequest-game.netlify.app/)
+- [Live Link](https://codeeequest.netlify.app/)
 
 
 ### Built With

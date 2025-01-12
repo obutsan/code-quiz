@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Navbar, Nav, Button, NavDropdown } from "react-bootstrap";
-import { RestartAlt, EmojiEvents } from "@mui/icons-material";
+import { EmojiEvents } from "@mui/icons-material";
 import LeaderBoard from "../Leaderboard/index";
 
 const Header = () => {

@@ -6,11 +6,6 @@ export default function JavaScriptChallenge({
   count,
   handleAnswerButton,
   isFormDisabled,
-  handleRadioChange,
-  selectedOption,
-  isWin,
-  isCorrect,
-  status,
 }) {
   const question = questions[count].question || {};
   const answerOptions = questions[count].options || [];

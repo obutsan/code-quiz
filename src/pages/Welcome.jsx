@@ -14,15 +14,16 @@ import { useNavigate } from "react-router-dom";
 import { saveCurrentUser } from "../utils/localStorage";
 import fightGif from "/images/fightGif.gif";
 
-useEffect(() => {
-  localStorage.removeItem('currentUser'); 
-  }, []);
 
 const Welcome = () => {
   const [formData, setFormData] = useState({ username: "" });
   const [error, setError] = useState("");
   const [show, setShow] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+  localStorage.removeItem('currentUser'); 
+  }, []);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;

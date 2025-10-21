@@ -23,6 +23,7 @@
     "@popperjs/core": "^2.11.8",
     "@supabase/supabase-js": "^2.39.7",
     "bootstrap": "^5.3.3",
+    "canvas-confetti": "^1.9.3",
     "font-squirrel": "^0.0.1",
     "gatsby-plugin-image": "^3.14.0",
     "i": "^0.3.7",

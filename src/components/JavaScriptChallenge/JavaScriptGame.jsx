@@ -3,6 +3,7 @@ import Challenge from "./JavaScriptChallenge";
 import questions from "../../databases/javascriptQuestions.json";
 import Lives from "./Lives";
 import "./JavaScriptGame.css";
+import confetti from "canvas-confetti";
 import {
   successfulNotification,
   failNotification,
@@ -12,17 +13,10 @@ import {
 } from "./Notification/Notification";
 import { savePointsToStorage } from "../../utils/localStorage";
 
-const imageMap = {
-  start: "/images/js/go.jpeg",
-  correct: "/images/js/correct2.jpeg",
-  incorrect: "/images/js/wrong2.jpeg",
-  victory: "/images/js/win.jpeg",
-  lost: "/images/js/lost1.jpeg",
-  gameover: "/images/js/start.jpeg",
-  nextlevel: "/images/js/nextlevel2.jpeg",
-  chooseanswer: "/images/js/chooseanswer.jpeg",
-  tryagain: "/images/js/tryagain.jpeg",
-};
+// sounds
+import correctSoundFile from "/sounds/correct.wav";
+import wrongSoundFile from "/sounds/wrong.wav";
+import victorySoundFile from "/sounds/victory.wav";
 
 export default function JavaScriptGame() {
   const [lives, setLives] = useState(3);
@@ -30,25 +24,55 @@ export default function JavaScriptGame() {
   const [count, setCount] = useState(0);
   const [isFormDisabled, setFormDisabled] = useState(false);
   const [selectedOption, setSelectedOption] = useState("");
+  const [answerStatus, setAnswerStatus] = useState(null); // "correct" | "wrong" | null
 
-  // Handle the next question button
+  const correctSound = new Audio(correctSoundFile);
+  const wrongSound = new Audio(wrongSoundFile);
+  const victorySound = new Audio(victorySoundFile);
+
   const handleNextQuestion = () => {
     if (count < questions.length - 1 && lives > 0) {
       setCount((prevCount) => prevCount + 1);
+      setSelectedOption("");
+      setAnswerStatus(null);
     }
   };
 
-  // Pause the game for a brief moment
   const pauseGame = () => {
     setFormDisabled(true);
     setTimeout(() => setFormDisabled(false), 1000);
   };
 
-  // Handle answer submission
+  // confetti animation
+  const launchConfetti = () => {
+    const duration = 2 * 1000;
+    const end = Date.now() + duration;
+
+    (function frame() {
+      confetti({
+        particleCount: 5,
+        angle: 60,
+        spread: 70,
+        origin: { x: 0 },
+      });
+      confetti({
+        particleCount: 5,
+        angle: 120,
+        spread: 70,
+        origin: { x: 1 },
+      });
+
+      if (Date.now() < end) {
+        requestAnimationFrame(frame);
+      }
+    })();
+  };
+
   const handleAnswer = (event) => {
-    event.preventDefault();
-    const answer = event.target.answer.value;
+    const answer = event.target.value;
     const correctAnswer = questions[count].correctAnswer;
+
+    setSelectedOption(answer);
 
     if (!answer) {
       rememberNotification();
@@ -57,22 +81,26 @@ export default function JavaScriptGame() {
     }
 
     if (answer === correctAnswer) {
+      setAnswerStatus("correct");
+      correctSound.play();
       setPoints((prevPoints) => prevPoints + 10);
-      correctAnswerNotification();
 
-      // Handle victory at the last question
+      // finishing level1
       if (count === questions.length - 1) {
         const finalPoints = points + 10;
         setTimeout(() => {
           successfulNotification(finalPoints);
           savePointsToStorage(finalPoints);
+          launchConfetti();           // 🎉 
+          victorySound.play();        // 🔊 
           setFormDisabled(true);
-        }, 2000);
+        }, 1500);
       }
     } else {
-      wrongtAnswerNotification();
+      setAnswerStatus("wrong");
+      wrongSound.play();
+      //wrongtAnswerNotification();
 
-      // Deduct a life and handle game over
       if (lives > 1) {
         setLives((prevLives) => prevLives - 1);
       } else {
@@ -84,13 +112,11 @@ export default function JavaScriptGame() {
       }
     }
 
-    // Move to the next question if not the last one
     if (count < questions.length - 1) {
-      handleNextQuestion();
+      setTimeout(() => handleNextQuestion(), 1200);
     }
 
     pauseGame();
-    event.target.reset();
   };
 
   return (
@@ -109,6 +135,8 @@ export default function JavaScriptGame() {
         count={count}
         handleAnswerButton={handleAnswer}
         isFormDisabled={isFormDisabled}
+        selectedOption={selectedOption}
+        answerStatus={answerStatus}
       />
     </section>
   );

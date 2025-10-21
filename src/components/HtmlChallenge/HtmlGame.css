@@ -23,6 +23,21 @@
   animation: pulse 3s linear infinite;
 }
 
+.answer-button {
+  border-width: 5px;
+  border-style: solid;
+  transition: border-color 0.3s;
+}
+
+.answer-button.correct {
+  border: 4px solid green !important;
+}
+
+.answer-button.wrong {
+  border: 4px solid red !important;
+}
+
+
 @-webkit-keyframes pulse {
   0% {
     -webkit-transform: scale(1.05);

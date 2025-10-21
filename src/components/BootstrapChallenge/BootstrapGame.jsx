@@ -10,6 +10,10 @@ import Livess from "./../JavaScriptChallenge/Lives";
 import { savePointsToStorage } from "../../utils/localStorage";
 import "./Challenge3.css";
 
+// Імпорт звуків
+import correctSoundFile from "/sounds/correct.wav";
+import wrongSoundFile from "/sounds/wrong.wav";
+
 export default function Game() {
   const [lives, setLives] = useState(3);
   const [points, setPoints] = useState(0);
@@ -17,8 +21,12 @@ export default function Game() {
   const [message, setMessage] = useState("Ready");
   const [gameOver, setGameOver] = useState(false);
   const [allQuestionsAnswered, setAllQuestionsAnswered] = useState(false);
-  const [lastAnsweredQuestionIndex, setLastAnsweredQuestionIndex] =
-    useState(-1);
+  const [lastAnsweredQuestionIndex, setLastAnsweredQuestionIndex] = useState(-1);
+  const [answerStatus, setAnswerStatus] = useState(null); // "correct" | "wrong" | null
+
+  // Створення об'єктів звуку
+  const correctSound = new Audio(correctSoundFile);
+  const wrongSound = new Audio(wrongSoundFile);
 
   useEffect(() => {
     if (allQuestionsAnswered) {
@@ -28,9 +36,7 @@ export default function Game() {
 
   useEffect(() => {
     const storedUserData = localStorage.getItem("currentUser");
-    const parsedData = storedUserData
-      ? JSON.parse(storedUserData)
-      : { name: "", points: 0 };
+    const parsedData = storedUserData ? JSON.parse(storedUserData) : { name: "", points: 0 };
     setPoints(parsedData.points);
   }, []);
 
@@ -42,6 +48,8 @@ export default function Game() {
     if (userAnswer.trim() === correctAnswer) {
       setPoints((prevPoints) => prevPoints + 10);
       setMessage("Correct! + 10 points");
+      setAnswerStatus("correct");
+      correctSound.play(); // звук правильної відповіді
     } else {
       if (lives > 1) {
         setLives((prevLives) => prevLives - 1);
@@ -51,12 +59,17 @@ export default function Game() {
         setLastAnsweredQuestionIndex(count);
         setGameOver(true);
         setMessage("No lives left!");
-        return;
       }
+      setAnswerStatus("wrong");
+      wrongSound.play(); // звук неправильної відповіді
     }
 
-    if (!gameOver) setCount((prevCount) => prevCount + 1);
-    checkAllQuestionsAnswered();
+    // Показати підсвічування перед переходом до наступного питання
+    setTimeout(() => {
+      setAnswerStatus(null);
+      if (!gameOver) setCount((prevCount) => prevCount + 1);
+      checkAllQuestionsAnswered();
+    }, 1000);
   };
 
   const handleRestartGame = () => {
@@ -67,6 +80,7 @@ export default function Game() {
     setGameOver(false);
     setAllQuestionsAnswered(false);
     setLastAnsweredQuestionIndex(-1);
+    setAnswerStatus(null);
   };
 
   const handleBuyLife = () => {
@@ -94,28 +108,14 @@ export default function Game() {
         <Col xs="12" className="mb-3">
           <div className="border border-2 border-warning rounded gap-3 p-3 bg-primary bg-opacity-25 bg-gradient d-flex justify-content-end align-items-center">
             <Livess lives={lives} />
-            <Points
-              points={points}
-              totalQuestions={questions.length}
-              pointsPerQuestion={10}
-            />
+            <Points points={points} totalQuestions={questions.length} pointsPerQuestion={10} />
           </div>
         </Col>
 
         <Col xs="12" className="mb-2">
           <Row>
-            <Col
-              xs="12"
-              md="8"
-              className="d-flex flex-column align-items-center"
-            >
-              {imageSrc && (
-                <Image
-                  src={imageSrc}
-                  alt="Question Image"
-                  className="img-fluid question-img"
-                />
-              )}
+            <Col xs="12" md="8" className="d-flex flex-column align-items-center">
+              {imageSrc && <Image src={imageSrc} alt="Question Image" className="img-fluid question-img" />}
 
               <div className="w-100">
                 {!gameOver && !allQuestionsAnswered && (
@@ -123,29 +123,15 @@ export default function Game() {
                     count={count}
                     handleAnswerButton={handleAnswerButton}
                     gameOver={gameOver}
+                    answerStatus={answerStatus} // передаємо статус для підсвічування
                   />
                 )}
-                {allQuestionsAnswered && (
-                  <LevelComplete
-                    totalQuestions={questions.length}
-                    pointsPerQuestion={10}
-                  />
-                )}
-                {gameOver && (
-                  <GameOver
-                    handleRestartGame={handleRestartGame}
-                    points={points}
-                    handleBuyLife={handleBuyLife}
-                  />
-                )}
+                {allQuestionsAnswered && <LevelComplete totalQuestions={questions.length} pointsPerQuestion={10} />}
+                {gameOver && <GameOver handleRestartGame={handleRestartGame} points={points} handleBuyLife={handleBuyLife} />}
               </div>
             </Col>
 
-            <Col
-              xs="12"
-              md="4"
-              className="d-flex justify-content-center align-items-center"
-            >
+            <Col xs="12" md="4" className="d-flex justify-content-center align-items-center">
               <div className="w-100">
                 <Character
                   lives={lives}
